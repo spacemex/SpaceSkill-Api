@@ -1,0 +1,4 @@
+name: SkillApi
+version: '1.0-SNAPSHOT -A'
+main: com.github.spacemex.skillApi.SkillApi
+api-version: '1.21'
