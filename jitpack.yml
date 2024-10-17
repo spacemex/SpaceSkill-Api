@@ -1,3 +1,10 @@
 # jitpack.yml
+
 jdk:
   - openjdk21
+
+maven:
+  version: 3.6.3
+
+install:
+  - mvn -B install -DskipTests
