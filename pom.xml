@@ -6,7 +6,7 @@
 
     <groupId>com.github.spacemex</groupId>
     <artifactId>SkillApi</artifactId>
-    <version>1.2.1</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>SkillApi</name>
