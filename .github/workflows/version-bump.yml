@@ -44,26 +44,17 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Rename built JAR file
-        run: mv target/*.jar target/SkillApi-v${{ env.VERSION }}.jar
-
-      - name: Upload JAR file as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: SkillApi-v${{ env.VERSION }}
-          path: target/SkillApi-v${{ env.VERSION }}.jar
-
       - name: Create GitHub Release
-        uses: actions/create-release@v1
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: v${{ env.VERSION }}
-          release_name: Release v${{ env.VERSION }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: v${{ env.VERSION }}
+          name: Release v${{ env.VERSION }}
           body: |
             ## Release v${{ env.VERSION }}
             - This release includes the latest updates and fixes.
           draft: false
           prerelease: false
-          files: target/SkillApi-v${{ env.VERSION }}.jar
 
       - name: Publish to JitPack
         run: |
