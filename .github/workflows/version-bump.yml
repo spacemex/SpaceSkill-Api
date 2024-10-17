@@ -1,0 +1,58 @@
+name: Version Bump and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Triggers the workflow on tags like v1.2.3
+
+jobs:
+  bump_version_and_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: maven
+
+      - name: Extract version from tag
+        id: extract_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Set the new version in pom.xml
+        run: |
+          mvn versions:set -DnewVersion=${{ env.VERSION }}
+          mvn versions:commit
+
+      - name: Commit new version
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add pom.xml
+          git commit -m "Bump version to ${{ env.VERSION }}"
+          git push origin HEAD:master --follow-tags
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: v${{ env.VERSION }}
+          name: Release v${{ env.VERSION }}
+          body: |
+            ## Release v${{ env.VERSION }}
+            - This release includes the latest updates and fixes.
+          draft: false
+          prerelease: false
+
+      - name: Publish to JitPack
+        run: |
+          curl -X POST "https://jitpack.io/api/builds/com.github.spacemex/SkillApi/${{ env.VERSION }}" \
+            -H 'Authorization: token ${{ secrets.JITPACK_TOKEN }}'
