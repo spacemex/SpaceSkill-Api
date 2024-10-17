@@ -1,7 +1,9 @@
 # SkillApi - A Comprehensive API for Managing Skills in Bukkit Plugins
 
 [![Java CI with Maven](https://github.com/spacemex/SkillApi/actions/workflows/maven.yml/badge.svg)](https://github.com/spacemex/SkillApi/actions/workflows/maven.yml)
-SkillApi is a powerful and flexible API designed to simplify the creation and management of skills in Bukkit plugins.
+[![](https://jitpack.io/v/spacemex/SkillApi.svg)](https://jitpack.io/#spacemex/SkillApi)
+
+### SkillApi is a powerful and flexible API designed to simplify the creation and management of skills in Bukkit plugins.
 
 ## How to include the API
 
