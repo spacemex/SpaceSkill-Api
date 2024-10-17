@@ -11,3 +11,4 @@ install:
   - export PATH=$M2_HOME/bin:$PATH
   - mvn -v  # Display Maven version to verify installation
   - mvn -B install -DskipTests
+  
