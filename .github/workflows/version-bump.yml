@@ -29,11 +29,15 @@ jobs:
           mvn versions:set -DnewVersion=${{ env.VERSION }}
           mvn versions:commit
 
+      - name: Update version in plugin.yml
+        run: |
+          sed -i 's/version: .*/version: '"${{ env.VERSION }}"'/' src/main/resources/plugin.yml
+
       - name: Commit new version
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add pom.xml
+          git add pom.xml src/main/resources/plugin.yml
           git commit -m "Bump version to ${{ env.VERSION }}"
           git push origin HEAD:master --follow-tags
 
