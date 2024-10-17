@@ -54,11 +54,10 @@ jobs:
           path: target/SkillApi-v${{ env.VERSION }}.jar
 
       - name: Create GitHub Release
-        uses: ncipollo/release-action@v1
+        uses: actions/create-release@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: v${{ env.VERSION }}
-          name: Release v${{ env.VERSION }}
+          tag_name: v${{ env.VERSION }}
+          release_name: Release v${{ env.VERSION }}
           body: |
             ## Release v${{ env.VERSION }}
             - This release includes the latest updates and fixes.
