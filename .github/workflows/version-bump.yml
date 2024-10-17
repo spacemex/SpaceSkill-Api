@@ -31,7 +31,7 @@ jobs:
 
       - name: Update version in plugin.yml
         run: |
-          sed -i 's/version: .*/version: '"${{ env.VERSION }}"'/' src/main/resources/plugin.yml
+          sed -i "s/^version: .*/version: '${{ env.VERSION }}'/" src/main/resources/plugin.yml
 
       - name: Commit new version
         run: |
