@@ -24,8 +24,9 @@ jobs:
         run: mvn clean install
 
       - name: Generate Changelog
-        uses: github-changelog-generator/github-changelog-generator@v1
+        uses: mikepenz/release-changelog-builder-action@v3
         with:
+          config: .github/release-changelog-config.json
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
@@ -36,6 +37,6 @@ jobs:
           name: Release ${{ github.ref }}
           body: |
             ## Changes
-            [CHANGELOG.md](./CHANGELOG.md)
+            ${{ steps.changelog.outputs.changelog }}
           draft: false
           prerelease: false
