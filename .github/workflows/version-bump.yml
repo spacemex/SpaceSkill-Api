@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: 'refs/heads/master'  # Change "master" to your default branch if it's different
 
       - name: Set up JDK 21
         uses: actions/setup-java@v4
@@ -38,8 +40,8 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add pom.xml src/main/resources/plugin.yml
-          git commit -m "Bump version to ${{ env.VERSION }}"
-          git push origin HEAD:master --follow-tags
+          git diff-index --quiet HEAD || git commit -m "Bump version to ${{ env.VERSION }}"
+          git push origin HEAD:refs/heads/master  # Ensure this pushes to master or your default branch
 
       - name: Build with Maven
         run: mvn clean install
