@@ -48,7 +48,7 @@ jobs:
         run: mv target/*.jar target/SkillApi-v${{ env.VERSION }}.jar
 
       - name: Upload JAR file as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: SkillApi-v${{ env.VERSION }}
           path: target/SkillApi-v${{ env.VERSION }}.jar
