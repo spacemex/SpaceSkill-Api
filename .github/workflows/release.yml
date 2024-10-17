@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*'  # Matches tags like v1.0.0, v2.1.0, etc.
+      - 'v*.*.*'  # Triggers the workflow on tags like v1.0.0
 
 jobs:
   release:
@@ -13,10 +13,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
         with:
-          node-version: '20' # Latest version or any specific version you need
+          distribution: 'temurin' # or adopt, zulu, etc.
+          java-version: '21'
+
+      - name: Set up Maven 3.6.3
+        run: |
+          wget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip
+          unzip -q apache-maven-3.6.3-bin.zip
+          export M2_HOME=$PWD/apache-maven-3.6.3
+          export PATH=$M2_HOME/bin:$PATH
+          mvn --version
+
+      - name: Generate Changelog
+        uses: github-changelog-generator/github-changelog-generator@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
         uses: ncipollo/release-action@v1
