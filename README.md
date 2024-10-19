@@ -62,6 +62,8 @@ Implementing SkillApi is straightforward. Below is an example of how to create a
 
 ### Example Plugin
 
+## Or A More Refined Example Plugin: https://github.com/spacemex/SkillApiExamplePlugin
+
 ```java
 package com.example.skillplugin;
 
