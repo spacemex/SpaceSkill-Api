@@ -62,7 +62,7 @@ Implementing SpaceSkill-Api is straightforward. Below is an example of how to cr
 
 ### Example Plugin
 
-## Or A More Refined Example Plugin: https://github.com/spacemex/SpaceSkill-ApiExamplePlugin
+## Or A More Refined Example Plugin: [https://github.com/spacemex/SpaceSkill-ApiExamplePlugin](https://github.com/spacemex/SpaceSkillApiExamplePlugin)
 
 ```java
 package com.example.skillplugin;
