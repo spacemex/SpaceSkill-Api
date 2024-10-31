@@ -19,9 +19,8 @@
 <dependencies>
     <dependency>
         <groupId>com.github.spacemex</groupId>
-        <groupId>com.github.spacemex</groupId>
         <artifactId>SpaceSkill-Api</artifactId>
-        <version>1.0</version>
+        <version>[![](https://jitpack.io/v/spacemex/SpaceSkill-Api.svg)](https://jitpack.io/#spacemex/SpaceSkill-Api)</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -34,7 +33,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly "com.github.spacemex:SpaceSkill-Api:1.0"
+    compileOnly "com.github.spacemex:SpaceSkill-Api:[![](https://jitpack.io/v/spacemex/SpaceSkill-Api.svg)](https://jitpack.io/#spacemex/SpaceSkill-Api)"
 }
 ```
 
