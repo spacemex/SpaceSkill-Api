@@ -20,7 +20,7 @@
     <dependency>
         <groupId>com.github.spacemex</groupId>
         <artifactId>SpaceSkill-Api</artifactId>
-        <version>${{ env.JITPACK }}</version>
+        <version>1.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -33,7 +33,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly "com.github.spacemex:SpaceSkill-Api:$JITPACK"
+    compileOnly "com.github.spacemex:SpaceSkill-Api:1.0"
 }
 ```
 
