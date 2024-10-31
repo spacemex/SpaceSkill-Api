@@ -20,7 +20,7 @@
     <dependency>
         <groupId>com.github.spacemex</groupId>
         <artifactId>SpaceSkill-Api</artifactId>
-        <version>$JITPACK</version>
+        <version>${{ env.JITPACK }}</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
