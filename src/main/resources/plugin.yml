@@ -1,4 +1,4 @@
 name: SpaceSkill-Api
-version: '1.0.2'
+version: '1.0.3'
 main: com.github.spacemex.skillApi.SkillApi
 api-version: '1.21'
