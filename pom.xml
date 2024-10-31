@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.spacemex</groupId>
-    <artifactId>SkillApi</artifactId>
+    <artifactId>SpaceSkill-Api</artifactId>
     <version>1.0.2</version>
     <packaging>jar</packaging>
 
-    <name>SkillApi</name>
+    <name>SpaceSkill-Api</name>
 
     <properties>
         <java.version>21</java.version>

@@ -1,9 +1,9 @@
-# SkillApi - A Comprehensive API for Managing Skills in Bukkit Plugins
+# SpaceSkill-Api - A Comprehensive API for Managing Skills in Bukkit Plugins
 
-[![Java CI with Maven](https://github.com/spacemex/SkillApi/actions/workflows/maven.yml/badge.svg)](https://github.com/spacemex/SkillApi/actions/workflows/maven.yml)
-[![](https://jitpack.io/v/spacemex/SkillApi.svg)](https://jitpack.io/#spacemex/SkillApi)
+[![Java CI with Maven](https://github.com/spacemex/SpaceSkill-Api/actions/workflows/maven.yml/badge.svg)](https://github.com/spacemex/SpaceSkill-Api/actions/workflows/maven.yml)
+[![](https://jitpack.io/v/spacemex/SpaceSkill-Api.svg)](https://jitpack.io/#spacemex/SpaceSkill-Api)
 
-### SkillApi is a powerful and flexible API designed to simplify the creation and management of skills in Bukkit plugins.
+### SpaceSkill-Api is a powerful and flexible API designed to simplify the creation and management of skills in Bukkit plugins.
 
 ## How to include the API
 
@@ -19,7 +19,8 @@
 <dependencies>
     <dependency>
         <groupId>com.github.spacemex</groupId>
-        <artifactId>SkillApi</artifactId>
+        <groupId>com.github.spacemex</groupId>
+        <artifactId>SpaceSkill-Api</artifactId>
         <version>1.0</version>
         <scope>provided</scope>
     </dependency>
@@ -33,15 +34,15 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly "com.github.spacemex:SkillApi:1.0"
+    compileOnly "com.github.spacemex:SpaceSkill-Api:1.0"
 }
 ```
 
 **Note:** Replace `1.0` with the actual version number you are using.
 
-## Why SkillApi?
+## Why SpaceSkill-Api?
 
-SkillApi aims to provide a centralized system for skill management, making it easier for developers to create, use, and extend skills in their plugins. SkillApi offers:
+SpaceSkill-Api aims to provide a centralized system for skill management, making it easier for developers to create, use, and extend skills in their plugins. SpaceSkill-Api offers:
 
 * An easy-to-use interface for defining skills.
 * A base abstract class to simplify skill implementation.
@@ -50,19 +51,19 @@ SkillApi aims to provide a centralized system for skill management, making it ea
 
 ## License
 
-SkillApi is distributed under the MIT License. This means you are free to use, modify, and distribute it as long as you include the original license information.
+SpaceSkill-Api is distributed under the MIT License. This means you are free to use, modify, and distribute it as long as you include the original license information.
 
 ## Building
 
-SkillApi includes all the necessary libraries to build from the current branch.
+SpaceSkill-Api includes all the necessary libraries to build from the current branch.
 
-## Implementing SkillApi
+## Implementing SpaceSkill-Api
 
-Implementing SkillApi is straightforward. Below is an example of how to create a custom skill and hook into the API.
+Implementing SpaceSkill-Api is straightforward. Below is an example of how to create a custom skill and hook into the API.
 
 ### Example Plugin
 
-## Or A More Refined Example Plugin: https://github.com/spacemex/SkillApiExamplePlugin
+## Or A More Refined Example Plugin: https://github.com/spacemex/SpaceSkill-ApiExamplePlugin
 
 ```java
 package com.example.skillplugin;
@@ -80,7 +81,7 @@ public class ExamplePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Initialize your SkillApi and SkillManager here
+        // Initialize your SpaceSkill-Api and SkillManager here
         skillManager = new SkillManager();
         skillManager.registerSkill(new MiningSkill());
 
@@ -179,6 +180,6 @@ public class MiningSkill extends AbstractSkill {
 
 ## Conclusion
 
-SkillApi provides a robust platform for skill management in Bukkit plugins. For detailed documentation and further examples, please visit the [GitHub repository](https://github.com/spacemex/SkillApi).
+SpaceSkill-Api provides a robust platform for skill management in Bukkit plugins. For detailed documentation and further examples, please visit the [GitHub repository](https://github.com/spacemex/SpaceSkill-Api).
 
 Feel free to open issues or contribute to the repository! Happy coding!
